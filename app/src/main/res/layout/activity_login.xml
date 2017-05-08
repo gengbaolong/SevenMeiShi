@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <!--fitsSystemWindows 是在 android 4.4 中引入的。 System windows 顾名思义就是系统窗口，系统在这里显示系统一些属性和操作区域，比如 最上方的状态栏，以及没有实体按键的最下方的虚拟导航栏。
+    大部分的时候，你的应用都不会在状态栏和导航栏下面显示内容，如果你需要在他们下面显示内容，则需要确保你应用的可交互控件（比如按钮）不要显示在系统窗口下面了。 android:fitsSystemWindows=“true” 默认行为就是通过在 View 上
+    设置和系统窗口一样高度的边框（padding ）来确保你的内容不会出现到系统窗口下面。-->
+
+    <include layout="@layout/common_toolbar" />
+
+    <!--http://blog.csdn.net/yhy123456q/article/details/54693460-->
+    <!--hintTextAppearance===================设置hint的style，字体颜色，字体大小等-->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="66dp"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+        <EditText
+            android:id="@+id/editText_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="手机号"
+            android:inputType="phone" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+        <EditText
+            android:id="@+id/editText_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/button_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="login"
+        android:text="登录"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:pb_colorComplete="@color/green_complete"
+        app:pb_colorError="@color/red_error"
+        app:pb_colorNormal="?attr/colorPrimary"
+        app:pb_colorPressed="?attr/colorPrimaryDark"
+        app:pb_colorProgress="@color/purple_progress"
+        app:pb_textComplete="登录成功"
+        app:pb_textError="登录错误"
+        app:pb_textProgress="正在登录..." />
+
+    <TextView
+        android:id="@+id/textView_reset_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_login"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="找回密码" />
+
+    <TextView
+        android:id="@+id/textView_create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_login"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="注册新帐号" />
+
+
+
+</LinearLayout>
